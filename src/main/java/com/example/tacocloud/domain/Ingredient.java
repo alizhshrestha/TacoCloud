@@ -1,25 +1,24 @@
 package com.example.tacocloud.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Data
 @Entity
-@AllArgsConstructor
+@Getter
+@Setter
 @NoArgsConstructor
-//@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
-public class Ingredient{
+@AllArgsConstructor
+public class Ingredient {
+
 
     @Id
     private String id;
     private String name;
     private Type type;
 
-    public enum Type{
+    public enum Type {
         WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
     }
 }

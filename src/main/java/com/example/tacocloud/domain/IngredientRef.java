@@ -1,8 +1,14 @@
-package com.example.tacocloud.domain;
-
-import lombok.Data;
-
-@Data
-public class IngredientRef {
-    private final String ingredient;
-}
+//package com.example.tacocloud.domain;
+//
+//import lombok.*;
+//
+//import javax.persistence.Entity;
+//
+//@Entity
+//@Getter
+//@Setter
+//@NoArgsConstructor
+//@AllArgsConstructor
+//public class IngredientRef {
+//    private final String ingredient;
+//}
