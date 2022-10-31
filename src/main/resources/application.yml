@@ -12,7 +12,11 @@
 #    name: tacocloud
 #    url: jdbc:h2:mem:tacocloud
 
+
 spring:
+  profiles:
+    active: dev
+
   jpa:
     properties:
       hibernate:
@@ -23,9 +27,39 @@ spring:
     url: jdbc:postgresql://localhost:5432/tacoclouddb
     username: postgres
     password: root
+
+
+
+#  sql:
+#    init:
+#      schema-locations:
+#        - order-schema.sql
+#      data-locations:
+#        ingredients.sql
+
+
 #  security:
 #    oauth2:
 #      client:
 #        registration:
 #          tacocloud:
+server:
+  port: 8090
 #            clientId:
+#logging:
+#  level:
+#    root: WARN
+#    org.springframework.security: DEBUG
+#  file:
+#    path: /var/logs
+#    file: TacoCloud.log
+
+
+greeting:
+  welcome: You are using ${spring.application.name}.
+
+
+#taco:
+#  orders:
+#    pageSize: 10
+

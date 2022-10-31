@@ -26,16 +26,27 @@ public class RegistrationController {
     }
 
     @GetMapping
-    public String registerForm(/*WebRequest request, Model model*/) {
-//        RegistrationForm registrationForm = new RegistrationForm();
-//        model.addAttribute("registrationForm", registrationForm);
+    public String registerForm() {
         return "registration";
     }
 
 
     @PostMapping
-    public String processRegistration(/*@ModelAttribute("registrationForm") */RegistrationForm registrationForm) {
-        userRepo.save(registrationForm.toUser(passwordEncoder));
+    public String processRegistration(@ModelAttribute RegistrationForm registrationForm) {
+        System.out.println(registrationForm);
+
+        User user = new User();
+        user.setFullname(registrationForm.getFullname());
+        user.setUsername(registrationForm.getUsername());
+        user.setPassword(passwordEncoder.encode(registrationForm.getPassword()));
+        user.setCity(registrationForm.getCity());
+        user.setState(registrationForm.getState());
+        user.setStreet(registrationForm.getStreet());
+        user.setPhoneNumber(registrationForm.getPhone());
+        user.setZip(registrationForm.getZip());
+//        userRepo.save(registrationForm.toUser(passwordEncoder));
+
+        userRepo.save(user);
         return "redirect:/login";
     }
 

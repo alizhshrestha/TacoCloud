@@ -1,0 +1,37 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tacoclouddb
+    username: postgres
+    password: root
+  data:
+    rest:
+      base-path: /data-api
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9000
+#          jwk-set-uri: http://localhost:9000/oauth2/jwks
+
+server:
+  port: 8090
+
+greeting:
+  welcome: You are using ${spring.application.name}.
+
+
+logging:
+  level:
+    root: INFO
+  file:
+    path: /var/logs
+    file: tacocloud.log
+    name: tacocloud.log
+

@@ -15,6 +15,8 @@ import java.util.Collection;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+@ToString
 public class User implements UserDetails {
 
     private static final long serialVersionUID = 1L;
@@ -67,4 +69,6 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+
 }
